@@ -10,7 +10,7 @@ addons:
     - libevent-dev
     - libsqlite3-dev
 env:
-- DATABASE_FILE=expansions/mcg.cdb
+- DATABASE_FILE=expansions/sekka.cdb
 
 before_install:
 - git clone --depth=1 --branch=server --recursive https://github.com/purerosefallen/ygopro
