@@ -1,0 +1,27 @@
+version: '{build}'
+
+environment:
+  AUTH_TOKEN:
+    secure: EQ9miMjfX/QAoBvgc6D+JLmHatLyxOEKZ/uo68QijxWW5Gp4MzB/pOH9+u2GlDVO
+
+build_script:
+  - git config --global user.name "purerosefallen"
+  - git config --global user.email "78877@qq.com"
+  - git checkout master
+  - git clone --depth=1 https://github.com/purerosefallen/ygopro-222DIY-data
+  - cd ygopro-222DIY-data
+
+  - cp -rf ../expansions/pics expansions
+  - cp -rf ../expansions/script expansions
+  - cp -rf ../sound .
+
+  - git add . -A
+  - git commit -m "Auto Push by Miyuki"
+  - git push https://%AUTH_TOKEN%@github.com/purerosefallen/ygopro-222DIY-data master
+  - cd ..
+
+test: off
+
+branches:
+  only:
+    - master
