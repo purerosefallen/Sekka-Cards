@@ -16,7 +16,7 @@ build_script:
   - cp -rf ../sound .
 
   - git add . -A
-  - git commit -m "Auto Push by Miyuki"
+  - git commit -m "Auto Push by Sekka"
   - git push https://%AUTH_TOKEN%@github.com/purerosefallen/ygopro-222DIY-data master
   - cd ..
 
