@@ -7,7 +7,7 @@ function cm.initial_effect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
 	e1:SetCondition(function(e,tp,eg,ep,ev,re,r,rp)
-		local ph=PHASE_MAIN1+1
+		local ph=Duel.GetCurrentPhase()
 		return Duel.GetFieldGroupCount(tp,0,LOCATION_ONFIELD)>Duel.GetFieldGroupCount(tp,LOCATION_ONFIELD,0) and ph>PHASE_MAIN1 and ph<PHASE_MAIN2
 	end)
 	e1:SetOperation(function(e,tp,eg,ep,ev,re,r,rp)
