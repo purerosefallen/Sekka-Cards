@@ -43,6 +43,7 @@ function cm.filter2(c,e,tp,m,f,chkf)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
+		if Duel.GetMZoneCount(tp)<=0 then return false end
 		local chkf=PLAYER_NONE
 		local mg1=Duel.GetMatchingGroup(cm.filter3,tp,LOCATION_DECK,0,nil)
 		local res=Duel.IsExistingMatchingCard(cm.filter2,tp,LOCATION_GRAVE,0,1,nil,e,tp,mg1,nil,chkf)
@@ -60,6 +61,7 @@ function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_GRAVE)
 end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.GetMZoneCount(tp)<=0 then return false end
 	local chkf=PLAYER_NONE
 	local mg1=Duel.GetMatchingGroup(cm.filter3,tp,LOCATION_DECK,0,nil):Filter(cm.filter1,nil,e)
 	local sg1=Duel.GetMatchingGroup(cm.filter2,tp,LOCATION_GRAVE,0,nil,e,tp,mg1,nil,chkf)
